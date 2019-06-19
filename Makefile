@@ -17,7 +17,7 @@ runCov:
 
 calCov:
 	cd bin ; java -jar ../lib/jacococli.jar report jacoco.exec --classfiles ../bin \
-	--sourcefiles ../src --sourcefiles ../testcase --html reportDir
+	--sourcefiles ../src --sourcefiles ../testcase --xml jacoco.xml --html reportDir
 
 showCov:
 	RED="\033[0;31m" ; NC='\033[0m' ; printf "$${RED}http://" ; curl -s https://api.ipify.org/ ; printf ":8000/$${NC}\n"
