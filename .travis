@@ -1,0 +1,23 @@
+language: java
+
+os:
+  - linux
+dist:
+  - trusty
+jdk:
+  - oraclejdk9
+addons:
+  apt:
+    packages:
+    - junit4
+    - libmockito-java
+script:
+  - make clean
+  - make compileTest
+  - make runCov
+  - make calCov
+branches:
+  only:
+    - master
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
